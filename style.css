@@ -1,0 +1,389 @@
+body {
+    background-color: #b8cfe0;
+    color: #111827;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 60px 20px;
+    margin: 0;
+}
+
+/* =========================
+   WELCOME SCREEN
+   ========================= */
+
+.welcome-card {
+    background-color: #f8f5ef;
+    max-width: 550px;
+    margin: 60px auto;
+    padding: 50px 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.moon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.start-symbol {
+    font-size: 40px;
+    margin-left: 8px;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 20px;
+    color: #34495e;
+}
+
+.welcome-text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 25px 0;
+}
+
+button {
+    background-color: #1f2933;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #34495e;
+}
+
+
+/* =========================
+   JOURNAL SCREEN
+   ========================= */
+
+.journal-card {
+    display: none;
+    background-color: #f8f5ef;
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 45px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    text-align: left;
+}
+
+.journal-card h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+
+/* Mood buttons */
+
+.moods {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.moods button {
+    background-color: #dbe8f0;
+    color: #111827;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 22px;
+    padding: 0;
+}
+
+.moods button:hover {
+    background-color: #b8cfe0;
+}
+
+
+/* Journal questions */
+
+.journal-card label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+
+
+/* Text boxes */
+
+.journal-card textarea {
+    width: 100%;
+    min-height: 100px;
+    box-sizing: border-box;
+    border: 1px solid #c5d3dc;
+    border-radius: 15px;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    resize: vertical;
+    background-color: #ffffff;
+}
+
+.journal-card textarea:focus {
+    outline: none;
+    border-color: #7d9db2;
+}
+
+.moods button.selected {
+    background-color: #7d9db2;
+    transform: scale(1.1);
+}
+
+.journal-date {
+    text-align: center;
+    color: #7d9db2;
+    font-size: 14px;
+    margin-top: -20px;
+    margin-bottom: 25px;
+}
+
+.save-button {
+    display: block;
+    margin: 30px auto 0;
+}
+
+.entries-button {
+    display: block;
+    margin: 15px auto 0;
+    background-color: transparent;
+    color: #1f2933;
+    border: 1px solid #7d9db2;
+}
+
+.entries-button:hover {
+    background-color: #dbe8f0;
+}
+
+/* =========================
+   BACKGROUND DOODLES
+   ========================= */
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.doodles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.doodle {
+    position: absolute;
+    color: #1f2933;
+    opacity: 0.65;
+    font-size: 24px;
+}
+
+/* Position of each doodle */
+
+.d1 {
+    top: 8%;
+    left: 8%;
+}
+
+.d2 {
+    top: 18%;
+    left: 18%;
+    font-size: 20px;
+}
+
+.d3 {
+    top: 12%;
+    right: 10%;
+    font-size: 28px;
+}
+
+.d4 {
+    top: 25%;
+    right: 18%;
+    font-size: 26px;
+}
+
+.d5 {
+    top: 38%;
+    left: 7%;
+}
+
+.d6 {
+    top: 48%;
+    left: 14%;
+    font-size: 22px;
+}
+
+.d7 {
+    bottom: 28%;
+    left: 8%;
+    font-size: 22px;
+}
+
+.d8 {
+    top: 42%;
+    right: 8%;
+    font-size: 25px;
+}
+
+.d9 {
+    top: 55%;
+    right: 17%;
+    font-size: 20px;
+}
+
+.d10 {
+    top: 8%;
+    right: 30%;
+    font-size: 22px;
+}
+
+.d11 {
+    bottom: 18%;
+    left: 18%;
+}
+
+.d12 {
+    bottom: 10%;
+    right: 12%;
+    font-size: 28px;
+}
+
+.d13 {
+    bottom: 15%;
+    right: 20%;
+    font-size: 21px;
+}
+
+.d14 {
+    bottom: 32%;
+    right: 7%;
+}
+
+.d15 {
+    bottom: 8%;
+    left: 7%;
+    font-size: 20px;
+}
+
+.d16 {
+    bottom: 90%;
+    left: 30%;
+    font-size: 18px;
+}
+
+.d17 {
+    top: 32%;
+    left: 4%;
+    font-size: 20px;
+}
+
+.d18 {
+    bottom: 7%;
+    right: 35%;
+}
+
+.d19 {
+    top: 92%;
+    left: 50%;
+    font-size: 30px;
+}
+
+.d20 {
+    bottom: 95%;
+    right: 55%;
+}
+
+.d21 {
+    bottom: 70%;
+    right: 55%;
+}
+
+.d22 {
+    bottom: 85%;
+    right: 45%;
+}
+
+/* CLOSING SCREEN */
+
+.closing-card {
+    display: none;
+    background-color: #f8f5ef;
+    max-width: 550px;
+    margin: 80px auto;
+    padding: 55px 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.closing-symbol {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.closing-card h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.closing-quote {
+    font-size: 21px;
+    line-height: 1.6;
+    color: #34495e;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.closing-message {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 25px auto 30px;
+    max-width: 420px;
+    color: #4b5563;
+}
+
+.closing-card button {
+    margin-top: 10px;
+}
+
+.entries-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.entries-row .entries-button {
+    margin: 0;
+}
+
+.download-button {
+    background-color: transparent;
+    color: #1f2933;
+    border: 1px solid #7d9db2;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.download-button:hover {
+    background-color: #dbe8f0;
+}

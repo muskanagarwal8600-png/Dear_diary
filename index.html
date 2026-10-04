@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dear Diary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Decorative doodles -->
+<div class="doodles">
+
+    <span class="doodle d1">✦</span>
+    <span class="doodle d2">❀</span>
+    <span class="doodle d3">♡</span>
+    <span class="doodle d4">☾</span>
+    <span class="doodle d5">✧</span>
+    <span class="doodle d6">🌿</span>
+    <span class="doodle d7">🦋</span>
+    <span class="doodle d8">🐺</span>
+    <span class="doodle d9">✿</span>
+    <span class="doodle d10">☁</span>
+    <span class="doodle d11">✦</span>
+    <span class="doodle d12">♡</span>
+    <span class="doodle d13">🌷</span>
+    <span class="doodle d14">✧</span>
+    <span class="doodle d15">🐾</span>
+    <span class="doodle d16">❀</span>
+    <span class="doodle d17">☼</span>
+    <span class="doodle d18">✦</span>
+    <span class="doodle d19">✦</span>
+    <span class="doodle d20">🦋</span>
+    <span class="doodle d21">✦</span>
+    <span class="doodle d22">🐺</span>
+
+</div>
+
+    <!-- Welcome Screen -->
+    <div class="welcome-card">
+
+        <div class="moon">
+            ☾ <span class="start-symbol">✦</span>
+        </div>
+
+        <h1>Dear Diary</h1>
+
+        <p class="tagline">A little space for your thoughts.</p>
+
+        <p class="welcome-text">
+            Take a breath, slow down, and write whatever is on your mind.
+        </p>
+
+        <button onclick="startWriting()">Start Writing</button>
+
+       <div class="entries-row">
+    <button class="entries-button" onclick="showEntries()">📖 My Entries</button>
+
+    <button class="download-button" onclick="downloadEntries()" title="Download all entries">
+        ↧
+    </button>
+    
+</div>
+    </div>
+
+
+    <!-- Journal Screen -->
+    <div class="journal-card" id="journal">
+
+        <h2>How are you feeling today?</h2>
+        <p class="journal-date" id="journalDate"></p>
+
+    <div class="moods">
+    <button onclick="selectMood(this)">😊</button>
+    <button onclick="selectMood(this)">😌</button>
+    <button onclick="selectMood(this)">🥲</button>
+    <button onclick="selectMood(this)">😭</button>
+    <button onclick="selectMood(this)">😤</button>
+    <button onclick="selectMood(this)">🫠</button>
+</div>
+
+        <label>How was your day?</label>
+        <textarea placeholder="Write whatever is on your mind..."></textarea>
+
+        <label>Today's tiny win ✨</label>
+        <textarea placeholder="Even something small counts..."></textarea>
+
+        <label>Something I'm grateful for 🌷</label>
+        <textarea placeholder="I'm grateful for..."></textarea>
+        <button class="save-button" onclick="saveEntry()">Save Entry ✨</button>
+    </div>
+
+    <!-- Closing Screen -->
+<div class="closing-card" id="closingScreen">
+
+    <div class="closing-symbol">✦</div>
+
+    <h2>Your thoughts are safe here.</h2>
+
+    <p class="closing-quote">
+        “Keep discovering yourself,<br>
+        one thought at a time.”
+    </p>
+
+    <p class="closing-message">
+        Thank you for taking a little moment for yourself today. 🩵
+    </p>
+
+    <button onclick="goHome()">← Back to Dear Diary</button>
+
+</div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
