@@ -3,41 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Dear Diary</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Decorative doodles -->
-<div class="doodles">
 
-    <span class="doodle d1">✦</span>
-    <span class="doodle d2">❀</span>
-    <span class="doodle d3">♡</span>
-    <span class="doodle d4">☾</span>
-    <span class="doodle d5">✧</span>
-    <span class="doodle d6">🌿</span>
-    <span class="doodle d7">🦋</span>
-    <span class="doodle d8">🐺</span>
-    <span class="doodle d9">✿</span>
-    <span class="doodle d10">☁</span>
-    <span class="doodle d11">✦</span>
-    <span class="doodle d12">♡</span>
-    <span class="doodle d13">🌷</span>
-    <span class="doodle d14">✧</span>
-    <span class="doodle d15">🐾</span>
-    <span class="doodle d16">❀</span>
-    <span class="doodle d17">☼</span>
-    <span class="doodle d18">✦</span>
-    <span class="doodle d19">✦</span>
-    <span class="doodle d20">🦋</span>
-    <span class="doodle d21">✦</span>
-    <span class="doodle d22">🐺</span>
+    <!-- DECORATIVE DOODLES -->
+    <div class="doodles">
+        <span class="doodle d1">✦</span>
+        <span class="doodle d2">❀</span>
+        <span class="doodle d3">♡</span>
+        <span class="doodle d4">☾</span>
+        <span class="doodle d5">✧</span>
+        <span class="doodle d6">🌿</span>
+        <span class="doodle d7">🦋</span>
+        <span class="doodle d8">🐺</span>
+        <span class="doodle d9">✿</span>
+        <span class="doodle d10">☁</span>
+        <span class="doodle d11">✦</span>
+        <span class="doodle d12">♡</span>
+        <span class="doodle d13">🌷</span>
+        <span class="doodle d14">✧</span>
+        <span class="doodle d15">🐾</span>
+        <span class="doodle d16">❀</span>
+        <span class="doodle d17">☼</span>
+        <span class="doodle d18">✦</span>
+        <span class="doodle d19">✦</span>
+        <span class="doodle d20">🦋</span>
+        <span class="doodle d21">✦</span>
+        <span class="doodle d22">🐺</span>
+    </div>
 
-</div>
-
-    <!-- Welcome Screen -->
+    <!-- WELCOME SCREEN -->
     <div class="welcome-card">
 
         <div class="moon">
@@ -45,73 +43,288 @@
         </div>
 
         <h1>Dear Diary</h1>
-
         <p class="tagline">A little space for your thoughts.</p>
 
         <p class="welcome-text">
             Take a breath, slow down, and write whatever is on your mind.
         </p>
 
-        <button onclick="startWriting()">Start Writing</button>
+        <button onclick="startWriting()">✍🏻 Start Writing</button>
 
-       <div class="entries-row">
-    <button class="entries-button" onclick="showEntries()">📖 My Entries</button>
+        <button class="reading-corner-button"
+                onclick="openReadingCorner()">
+            📚 Reading Corner
+        </button>
 
-    <button class="download-button" onclick="downloadEntries()" title="Download all entries">
-        ↧
-    </button>
-    
-</div>
+        <div class="entries-row">
+            <button class="entries-button" onclick="showEntries()">
+                📖 My Entries
+            </button>
+
+             <button onclick="openReadingJourney()">
+             ✨ My Reading Journey</button>
+
+            <button class="download-button"
+                    onclick="downloadEntries()"
+                    title="Download all entries">
+                ↧
+            </button>
+        </div>
     </div>
 
 
-    <!-- Journal Screen -->
+    <!-- JOURNAL SCREEN -->
     <div class="journal-card" id="journal">
 
         <h2>How are you feeling today?</h2>
         <p class="journal-date" id="journalDate"></p>
 
-    <div class="moods">
-    <button onclick="selectMood(this)">😊</button>
-    <button onclick="selectMood(this)">😌</button>
-    <button onclick="selectMood(this)">🥲</button>
-    <button onclick="selectMood(this)">😭</button>
-    <button onclick="selectMood(this)">😤</button>
-    <button onclick="selectMood(this)">🫠</button>
-</div>
+        <div class="moods">
+            <button type="button" onclick="selectMood(this)">😊</button>
+            <button type="button" onclick="selectMood(this)">😌</button>
+            <button type="button" onclick="selectMood(this)">🥲</button>
+            <button type="button" onclick="selectMood(this)">😭</button>
+            <button type="button" onclick="selectMood(this)">😤</button>
+            <button type="button" onclick="selectMood(this)">🫠</button>
+        </div>
 
         <label>How was your day?</label>
         <textarea placeholder="Write whatever is on your mind..."></textarea>
 
-        <label>Today's tiny win ✨</label>
+        <label>What made you smile today? ✨</label>
         <textarea placeholder="Even something small counts..."></textarea>
 
-        <label>Something I'm grateful for 🌷</label>
-        <textarea placeholder="I'm grateful for..."></textarea>
-        <button class="save-button" onclick="saveEntry()">Save Entry ✨</button>
+        <label>What do you want to rant about? 🌷</label>
+        <textarea placeholder="I want to rant about..."></textarea>
+
+        <label>What's taking up space in your mind? ☁️</label>
+        <textarea placeholder="Share random thoughts without thinking..."></textarea>
+
+        <button class="save-button" onclick="saveEntry()">
+            Save Entry ✨
+        </button>
     </div>
 
-    <!-- Closing Screen -->
-<div class="closing-card" id="closingScreen">
 
-    <div class="closing-symbol">✦</div>
+    <!-- MY ENTRIES SCREEN
+         Existing JavaScript can display entries here if it uses this container. -->
+    <div class="entries-card" id="entriesCard" style="display:none;">
+        <h2>📖 My Entries</h2>
+        <div id="entriesList"></div>
 
-    <h2>Your thoughts are safe here.</h2>
+        <button onclick="goHome()">← Back to Dear Diary</button>
+    </div>
 
-    <p class="closing-quote">
-        “Keep discovering yourself,<br>
-        one thought at a time.”
-    </p>
 
-    <p class="closing-message">
-        Thank you for taking a little moment for yourself today. 🩵
-    </p>
+    <!-- CLOSING SCREEN -->
+    <div class="closing-card" id="closingScreen">
 
-    <button onclick="goHome()">← Back to Dear Diary</button>
+        <div class="closing-symbol">✦</div>
+
+        <h2>Your thoughts are safe here.</h2>
+
+        <p class="closing-quote">
+            “Keep discovering yourself,<br>
+            one thought at a time.”
+        </p>
+
+        <p class="closing-message">
+            Thank you for taking a little moment for yourself today. 🩵
+        </p>
+
+        <button onclick="goHome()">← Back to Dear Diary</button>
+    </div>
+
+
+    <!-- READING CORNER SCREEN -->
+    <div class="reading-corner-card" id="readingCorner">
+
+        <div class="reading-symbol">📚 ✦</div>
+
+        <h2>My Reading Corner</h2>
+
+        <p class="reading-tagline">
+            A thousand lives, one page at a time.
+        </p>
+
+
+        <!-- THREE BOOK COLLECTIONS -->
+        
+<!-- BOOKSHELF + BOOK COLLECTIONS LAYOUT -->
+<div class="reading-library-layout">
+
+    <!-- LEFT: ILLUSTRATED BOOKSHELF -->
+    <div class="bookshelf-placeholder" id="bookshelfPlaceholder">
+
+        <img
+            src="./bookshelf.png.png"
+            alt="A cozy illustrated bookshelf with books and a sleeping cat"
+            class="bookshelf-illustration"
+        >
+
+        <p class="bookshelf-subtext">
+            Every book has a story. Let's collect yours.
+        </p>
+
+    </div>
+
+
+    <!-- RIGHT: THREE BOOK COLLECTIONS -->
+    <div class="book-collections" id="bookCollections">
+
+        <div class="book-collection"
+             onclick="openBookCollection('Want to Read')">
+
+            <span>🔖</span>
+            <h3>Want to Read</h3>
+            <p>Stories waiting for you</p>
+            <p><strong id="wantToReadCount">0 books</strong></p>
+
+        </div>
+
+
+        <div class="book-collection"
+             onclick="openBookCollection('Currently Reading')">
+
+            <span>📖</span>
+            <h3>Currently Reading</h3>
+            <p>Your current little adventure</p>
+            <p><strong id="currentlyReadingCount">0 books</strong></p>
+
+        </div>
+
+
+        <div class="book-collection"
+             onclick="openBookCollection('Finished')">
+
+            <span>📚</span>
+            <h3>Finished</h3>
+            <p>Stories you've completed</p>
+            <p><strong id="finishedCount">0 books</strong></p>
+
+        </div>
+
+    </div>
 
 </div>
 
 
+<!-- COLLECTION DETAILS: KEEP OUTSIDE THE LAYOUT -->
+<div id="bookCollectionDetails" style="display:none;">
+
+    <h3 id="collectionHeading">My Books</h3>
+
+    <div id="collectionBookList"></div>
+
+    <button onclick="closeBookCollection()">
+        ← Back to Collections
+    </button>
+
+</div>
+
+        <!-- ADD BOOK SECTION -->
+        <div class="add-book-section" id="addBookSection">
+
+            <h3>✦ Add a New Book ✦</h3>
+
+            <p>Save a little story for your future self.</p>
+
+            <button onclick="showAddBookForm()">
+                ＋ Add a Book
+            </button>
+        </div>
+
+
+        <!-- ADD BOOK FORM -->
+        <div class="add-book-form" id="addBookForm" style="display:none;">
+
+            <h3>Add a Little Story 📖</h3>
+
+            <label for="bookTitle">Book Title</label>
+            <input
+                type="text"
+                id="bookTitle"
+                placeholder="Enter the book title"
+                required
+            >
+
+            <label for="bookAuthor">Author's Name</label>
+            <input
+                type="text"
+                id="bookAuthor"
+                placeholder="Enter the author's name"
+            >
+
+            <label for="bookStatus">Reading Status</label>
+            <select id="bookStatus">
+                <option value="Want to Read">Want to Read</option>
+                <option value="Currently Reading">Currently Reading</option>
+                <option value="Finished">Finished</option>
+            </select>
+
+            <div class="book-form-buttons">
+                <button type="button" onclick="saveBook()">
+                    Save Book ✨
+                </button>
+
+                <button type="button" onclick="hideAddBookForm()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+
+
+        <button onclick="goHome()">← Back to Dear Diary</button>
+
+    </div>
+
+    
+<!-- My Reading Journey Page -->
+<div class="reading-journey-card" style="display: none;">
+
+    <h2>✨ My Reading Journey</h2>
+    <p>Every book takes you somewhere new. 📚</p>
+
+    <div class="journey-stats">
+        <h3>Books Finished</h3>
+        <p id="journeyFinishedCount">0</p>
+    </div>
+
+    <div class="journey-milestones">
+        <h3>🏆 Little Reading Milestones</h3>
+
+        <div class="milestone" data-milestone="1">
+            <span>🪻</span>
+            <p>Finish your first book</p>
+            <span class="milestone-status">🔒 Locked</span>
+        </div>
+
+        <div class="milestone" data-milestone="5">
+            <span>🌼</span>
+            <p>Finish 5 books</p>
+            <span class="milestone-status">🔒 Locked</span>
+        </div>
+
+        <div class="milestone" data-milestone="10">
+            <span>🌻</span>
+            <p>Finish 10 books</p>
+            <span class="milestone-status">🔒 Locked</span>
+        </div>
+
+        <div class="milestone" data-milestone="25">
+            <span>🌹</span>
+            <p>Finish 25 books</p>
+            <span class="milestone-status">🔒 Locked</span>
+        </div>
+    </div>
+
+    <button onclick="closeReadingJourney()">
+        ← Back to Reading Corner
+    </button>
+
+</div>
+
+    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
 
 </body>

@@ -1,157 +1,354 @@
-body {
-    background-color: #b8cfe0;
-    color: #111827;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 60px 20px;
-    margin: 0;
+
+/* ==========================================
+   DEAR DIARY — UNIFIED BLUE THEME
+   Light blue background + midnight blue cards
+   ========================================== */
+
+:root {
+    --page-blue: #bd4e8f5;
+    --page-blue-light: #dff0fc;
+    --navy: #102746;
+    --navy-mid: #1b3c64;
+    --navy-dark: #101d36;
+    --navy-text: #183354;
+    --text-light: #eaf3ff;
+    --text-muted: #c3d8f2;
+    --pale-blue: #dceaff;
+    --soft-blue: #dbe8f0;
+    --border-blue: #8eafd9;
+    --white: #ffffff;
+    --lavender: #e9e3f4;
+    --peach: #f3e6d9;
+    --shadow: 0 12px 35px rgba(16, 39, 70, 0.18);
 }
 
-/* =========================
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 60px 20px;
+    overflow-x: hidden;
+    background: var(--page-blue);
+    color: var(--navy-text);
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* ==========================================
+   SHARED CARD DESIGN
+   ========================================== */
+
+.welcome-card,
+.journal-card,
+.entries-card,
+.closing-card,
+.reading-corner-card,
+.reading-journey-card {
+    position: relative;
+    z-index: 1;
+    color: var(--text-light);
+    background: linear-gradient(
+        145deg,
+        var(--navy),
+        var(--navy-mid),
+        var(--navy-dark)
+    );
+    border: 1px solid rgba(190, 220, 255, 0.3);
+    border-radius: 26px;
+    box-shadow: var(--shadow);
+}
+
+.welcome-card h1,
+.journal-card h2,
+.entries-card h2,
+.closing-card h2,
+.reading-corner-card h2,
+.reading-journey-card h2 {
+    color: var(--text-light);
+}
+
+/* ==========================================
    WELCOME SCREEN
-   ========================= */
+   ========================================== */
 
 .welcome-card {
-    background-color: #f8f5ef;
-    max-width: 550px;
-    margin: 60px auto;
-    padding: 50px 40px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    max-width: 620px;
+    margin: 40px auto;
+    padding: 45px 30px;
 }
 
 .moon {
-    font-size: 40px;
     margin-bottom: 10px;
+    color: var(--pale-blue);
+    font-size: 48px;
+    text-shadow: 0 0 20px rgba(195, 225, 255, 0.35);
 }
 
 .start-symbol {
-    font-size: 40px;
-    margin-left: 8px;
+    margin-left: 10px;
+    color: var(--pale-blue);
+    font-size: 48px;
 }
 
-h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+.welcome-card h1 {
+    margin: 10px 0;
+    font-size: clamp(34px, 6vw, 48px);
+    letter-spacing: 1px;
 }
 
 .tagline {
-    font-size: 20px;
-    color: #34495e;
+    color: var(--text-muted);
+    font-size: 18px;
 }
 
 .welcome-text {
+    max-width: 420px;
+    margin: 24px auto 30px;
+    color: var(--text-muted);
     font-size: 16px;
-    line-height: 1.6;
-    margin: 25px 0;
+    line-height: 1.8;
 }
+
+/* General buttons */
 
 button {
-    background-color: #1f2933;
-    color: white;
-    border: none;
-    padding: 14px 30px;
-    border-radius: 30px;
-    font-size: 16px;
+    font-family: inherit;
     cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-button:hover {
-    background-color: #34495e;
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #8bbcf0;
+    outline-offset: 3px;
 }
 
+/* Main circular buttons */
 
-/* =========================
+.welcome-card > button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    height: 125px;
+    margin: 12px;
+    padding: 15px;
+    border: 1px solid #b8d5f5;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #e4efff, #b9d5f7);
+    color: #142b49;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+}
+
+.welcome-card > button:hover {
+    background: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(184, 213, 245, 0.24);
+}
+
+/* ==========================================
+   HOME PAGE — ENTRIES AND DOWNLOAD ROW
+   ========================================== */
+
+.entries-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.welcome-card .entries-row button {
+    min-height: 44px;
+    margin: 0;
+    padding: 11px 18px;
+    border: 1px solid var(--border-blue);
+    border-radius: 24px;
+    background: rgba(220, 237, 255, 0.09);
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.welcome-card .entries-row button:hover {
+    background: rgba(220, 237, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Download button */
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid var(--border-blue);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-light);
+    font-size: 24px;
+    line-height: 1;
+}
+
+.welcome-card .entries-row .download-button {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.download-button:hover {
+    background: rgba(220, 237, 255, 0.2);
+}
+
+.main-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.main-buttons button {
+    margin: 0;
+}
+
+/* ==========================================
    JOURNAL SCREEN
-   ========================= */
+   ========================================== */
 
 .journal-card {
     display: none;
-    background-color: #f8f5ef;
     max-width: 650px;
     margin: 40px auto;
-    padding: 45px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    padding: 40px;
     text-align: left;
 }
 
 .journal-card h2 {
-    text-align: center;
-    font-size: 28px;
     margin-bottom: 30px;
+    font-size: 28px;
+    text-align: center;
 }
 
+.journal-date {
+    margin-top: -20px;
+    margin-bottom: 25px;
+    color: #c3d8f2;
+    font-size: 14px;
+    text-align: center;
+}
 
 /* Mood buttons */
 
 .moods {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 12px;
     margin-bottom: 35px;
 }
 
-.moods button {
-    background-color: #dbe8f0;
-    color: #111827;
-    border: none;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    font-size: 22px;
-    padding: 0;
+.journal-card .moods button,
+.journal-card .moods button:hover,
+.journal-card .moods button.selected {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    margin: 0;
+    padding: 4px !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    font-size: 32px !important;
+    line-height: 1.4 !important;
 }
 
-.moods button:hover {
-    background-color: #b8cfe0;
+.journal-card .moods button:hover {
+    transform: scale(1.15);
 }
 
+.journal-card .moods button.selected {
+    transform: scale(1.2);
+}
 
-/* Journal questions */
+/* Journal labels */
 
 .journal-card label {
     display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
     margin-top: 25px;
+    margin-bottom: 10px;
+    color: var(--text-light);
+    font-weight: bold;
 }
 
-
-/* Text boxes */
+/* Journal text areas */
 
 .journal-card textarea {
+    display: block;
     width: 100%;
     min-height: 100px;
-    box-sizing: border-box;
-    border: 1px solid #c5d3dc;
-    border-radius: 15px;
     padding: 15px;
+    border: 1px solid #b5cde5;
+    border-radius: 15px;
+    background: #edf5fc;
+    color: #183354;
     font-family: Arial, sans-serif;
     font-size: 15px;
+    line-height: 1.6;
     resize: vertical;
-    background-color: #ffffff;
+}
+
+.journal-card textarea::placeholder {
+    color: #7189a2;
 }
 
 .journal-card textarea:focus {
+    border-color: #8bbcf0;
     outline: none;
-    border-color: #7d9db2;
+    box-shadow: 0 0 0 3px rgba(139, 188, 240, 0.18);
 }
 
-.moods button.selected {
-    background-color: #7d9db2;
-    transform: scale(1.1);
-}
+/* Journal buttons */
 
-.journal-date {
-    text-align: center;
-    color: #7d9db2;
+.journal-card button,
+.entries-card button,
+.closing-card button {
+    padding: 12px 22px;
+    border: 1px solid #b8d5f5;
+    border-radius: 25px;
+    background: var(--pale-blue);
+    color: var(--navy);
     font-size: 14px;
-    margin-top: -20px;
-    margin-bottom: 25px;
 }
 
-.save-button {
+.journal-card button:hover,
+.entries-card button:hover,
+.closing-card button:hover {
+    background: #ffffff;
+}
+
+.journal-card .save-button {
     display: block;
     margin: 30px auto 0;
 }
@@ -159,231 +356,653 @@ button:hover {
 .entries-button {
     display: block;
     margin: 15px auto 0;
-    background-color: transparent;
-    color: #1f2933;
-    border: 1px solid #7d9db2;
+    border: 1px solid var(--border-blue);
+    background: transparent;
+    color: var(--text-light);
 }
 
 .entries-button:hover {
-    background-color: #dbe8f0;
+    background: rgba(220, 237, 255, 0.15);
 }
 
-/* =========================
-   BACKGROUND DOODLES
-   ========================= */
+/* ==========================================
+   MY ENTRIES SCREEN
+   ========================================== */
 
-body {
-    position: relative;
-    overflow-x: hidden;
+.entries-card {
+    display: none;
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 35px;
+    text-align: left;
 }
 
-.doodles {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
+.entries-card h2 {
+    margin-bottom: 25px;
+    text-align: center;
 }
 
-.doodle {
-    position: absolute;
-    color: #1f2933;
-    opacity: 0.65;
-    font-size: 24px;
+.entries-card p,
+.entries-card label {
+    color: var(--text-muted);
+    line-height: 1.7;
 }
 
-/* Position of each doodle */
-
-.d1 {
-    top: 8%;
-    left: 8%;
+#entriesList,
+.entries-list {
+    margin: 20px 0;
 }
 
-.d2 {
-    top: 18%;
-    left: 18%;
-    font-size: 20px;
+.entry-item,
+.saved-entry {
+    margin: 14px 0;
+    padding: 18px;
+    border: 1px solid rgba(190, 220, 255, 0.22);
+    border-radius: 16px;
+    background: rgba(220, 237, 255, 0.09);
+    color: var(--text-light);
+    overflow-wrap: anywhere;
 }
 
-.d3 {
-    top: 12%;
-    right: 10%;
-    font-size: 28px;
-}
-
-.d4 {
-    top: 25%;
-    right: 18%;
-    font-size: 26px;
-}
-
-.d5 {
-    top: 38%;
-    left: 7%;
-}
-
-.d6 {
-    top: 48%;
-    left: 14%;
-    font-size: 22px;
-}
-
-.d7 {
-    bottom: 28%;
-    left: 8%;
-    font-size: 22px;
-}
-
-.d8 {
-    top: 42%;
-    right: 8%;
-    font-size: 25px;
-}
-
-.d9 {
-    top: 55%;
-    right: 17%;
-    font-size: 20px;
-}
-
-.d10 {
-    top: 8%;
-    right: 30%;
-    font-size: 22px;
-}
-
-.d11 {
-    bottom: 18%;
-    left: 18%;
-}
-
-.d12 {
-    bottom: 10%;
-    right: 12%;
-    font-size: 28px;
-}
-
-.d13 {
-    bottom: 15%;
-    right: 20%;
-    font-size: 21px;
-}
-
-.d14 {
-    bottom: 32%;
-    right: 7%;
-}
-
-.d15 {
-    bottom: 8%;
-    left: 7%;
-    font-size: 20px;
-}
-
-.d16 {
-    bottom: 90%;
-    left: 30%;
-    font-size: 18px;
-}
-
-.d17 {
-    top: 32%;
-    left: 4%;
-    font-size: 20px;
-}
-
-.d18 {
-    bottom: 7%;
-    right: 35%;
-}
-
-.d19 {
-    top: 92%;
-    left: 50%;
-    font-size: 30px;
-}
-
-.d20 {
-    bottom: 95%;
-    right: 55%;
-}
-
-.d21 {
-    bottom: 70%;
-    right: 55%;
-}
-
-.d22 {
-    bottom: 85%;
-    right: 45%;
-}
-
-/* CLOSING SCREEN */
+/* ==========================================
+   CLOSING SCREEN
+   ========================================== */
 
 .closing-card {
     display: none;
-    background-color: #f8f5ef;
     max-width: 550px;
-    margin: 80px auto;
-    padding: 55px 40px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    margin: 60px auto;
+    padding: 45px 35px;
     text-align: center;
 }
 
 .closing-symbol {
-    font-size: 36px;
     margin-bottom: 20px;
+    color: var(--pale-blue);
+    font-size: 36px;
 }
 
 .closing-card h2 {
-    font-size: 30px;
     margin-bottom: 25px;
+    font-size: 30px;
 }
 
 .closing-quote {
-    font-size: 21px;
-    line-height: 1.6;
-    color: #34495e;
-    font-style: italic;
     margin: 20px 0;
+    color: #d7eaff;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
 }
 
 .closing-message {
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 25px auto 30px;
     max-width: 420px;
-    color: #4b5563;
+    margin: 25px auto 30px;
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.7;
 }
 
 .closing-card button {
     margin-top: 10px;
 }
 
-.entries-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    margin-top: 15px;
+/* ==========================================
+   BACKGROUND DOODLES
+   ========================================== */
+
+.doodles {
+    position: fixed;
+    z-index: 0;
+    inset: 0;
+    pointer-events: none;
 }
 
-.entries-row .entries-button {
+.doodle {
+    position: absolute;
+    color: #31577f;
+    opacity: 0.65;
+    font-size: 24px;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.18);
+}
+
+.d1 { top: 8%; left: 8%; }
+.d2 { top: 18%; left: 18%; font-size: 20px; }
+.d3 { top: 12%; right: 10%; font-size: 28px; }
+.d4 { top: 25%; right: 18%; font-size: 26px; }
+.d5 { top: 38%; left: 7%; }
+.d6 { top: 48%; left: 14%; font-size: 22px; }
+.d7 { bottom: 28%; left: 8%; font-size: 22px; }
+.d8 { top: 42%; right: 8%; font-size: 25px; }
+.d9 { top: 55%; right: 17%; font-size: 20px; }
+.d10 { top: 8%; right: 30%; font-size: 22px; }
+.d11 { bottom: 18%; left: 18%; }
+.d12 { bottom: 10%; right: 12%; font-size: 28px; }
+.d13 { bottom: 15%; right: 20%; font-size: 21px; }
+.d14 { bottom: 32%; right: 7%; }
+.d15 { bottom: 8%; left: 7%; font-size: 20px; }
+.d16 { bottom: 90%; left: 30%; font-size: 18px; }
+.d17 { top: 32%; left: 4%; font-size: 20px; }
+.d18 { bottom: 7%; right: 35%; }
+.d19 { top: 92%; left: 50%; font-size: 30px; }
+.d20 { bottom: 95%; right: 55%; }
+.d21 { bottom: 70%; right: 55%; }
+.d22 { bottom: 85%; right: 45%; }
+
+/* ==========================================
+   READING CORNER SCREEN
+   ========================================== */
+
+.reading-corner-card {
+    display: none;
+    width: 90%;
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 40px 35px;
+    text-align: center;
+}
+
+.reading-symbol {
+    margin-bottom: 12px;
+    color: var(--pale-blue);
+    font-size: 34px;
+}
+
+.reading-corner-card h2 {
+    margin-bottom: 12px;
+    font-size: 30px;
+}
+
+.reading-tagline {
+    margin-bottom: 30px;
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   BOOKSHELF + COLLECTIONS ALIGNED
+   ========================================== */
+
+.reading-library-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    margin: 25px 0;
+}
+
+/* Transparent bookshelf area */
+
+.reading-library-layout .bookshelf-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Bookshelf illustration */
+
+.reading-library-layout .bookshelf-illustration {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    transform: none;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Text under the bookshelf */
+
+.reading-library-layout .bookshelf-placeholder p,
+.reading-library-layout .bookshelf-subtext {
+    width: 100%;
+    margin: 10px 0 0;
+    color: var(--text-light);
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.reading-library-layout .bookshelf-placeholder .bookshelf-subtext {
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: normal;
+}
+
+/* Three cards in a compact vertical stack */
+
+.reading-library-layout .book-collections {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
     margin: 0;
 }
 
-.download-button {
-    background-color: transparent;
-    color: #1f2933;
-    border: 1px solid #7d9db2;
-    width: 48px;
-    height: 48px;
-    padding: 0;
-    border-radius: 50%;
-    font-size: 24px;
-    line-height: 1;
+/* Compact collection cards */
+
+.reading-library-layout .book-collection {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 13px 10px;
+    border: 1px solid #b9d5ed;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #dceeff, #c4def4);
+    color: var(--navy);
+    cursor: pointer;
+    text-align: center;
+    box-shadow: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.download-button:hover {
-    background-color: #dbe8f0;
+.reading-library-layout .book-collection:nth-child(2) {
+    border-color: #c7c5e5;
+    background: linear-gradient(145deg, #e6e7fb, #cdd9f1);
+}
+
+.reading-library-layout .book-collection:nth-child(3) {
+    border-color: #d6d8e9;
+    background: linear-gradient(145deg, #e0e9f4, #c6d8e9);
+}
+
+.reading-library-layout .book-collection:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.reading-library-layout .book-collection span {
+    font-size: 22px;
+}
+
+.reading-library-layout .book-collection h3 {
+    margin: 5px 0;
+    color: var(--navy);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.reading-library-layout .book-collection p {
+    margin: 0;
+    color: #526b84;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* ==========================================
+   ADD BOOK SECTION
+   ========================================== */
+
+.add-book-section {
+    margin: 25px 0;
+    padding: 25px 18px;
+    border: 1px solid rgba(190, 220, 255, 0.2);
+    border-radius: 20px;
+    background: rgba(220, 237, 255, 0.09);
+}
+
+.add-book-section h3 {
+    margin: 0 0 10px;
+    color: var(--text-light);
+    font-size: 20px;
+}
+
+.add-book-section p {
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Reading Corner buttons */
+
+.reading-corner-card button {
+    margin: 8px 5px;
+    padding: 12px 22px;
+    border: 1px solid #b8d5f5;
+    border-radius: 24px;
+    background: var(--pale-blue);
+    color: var(--navy);
+    font-size: 14px;
+}
+
+.reading-corner-card button:hover {
+    background: #ffffff;
+}
+
+/* ==========================================
+   ADD BOOK FORM
+   ========================================== */
+
+.add-book-form {
+    margin: 25px 0;
+    padding: 25px;
+    border: 1px solid rgba(190, 220, 255, 0.25);
+    border-radius: 20px;
+    background: rgba(220, 237, 255, 0.09);
+    text-align: left;
+}
+
+.add-book-form h3 {
+    margin: 0 0 25px;
+    color: var(--text-light);
+    font-size: 22px;
+    text-align: center;
+}
+
+.add-book-form label {
+    display: block;
+    margin: 16px 0 8px;
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.add-book-form input,
+.add-book-form select {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #b5cde5;
+    border-radius: 10px;
+    background: #edf5fc;
+    color: var(--navy);
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.add-book-form input:focus,
+.add-book-form select:focus {
+    border-color: #8bbcf0;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(139, 188, 240, 0.18);
+}
+
+.book-form-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.book-form-buttons button {
+    margin: 0;
+}
+
+.book-form-buttons button:last-child {
+    background: rgba(220, 237, 255, 0.14);
+    color: var(--text-light);
+}
+
+.book-form-buttons button:last-child:hover {
+    background: rgba(220, 237, 255, 0.25);
+}
+
+/* ==========================================
+   SAVED BOOK CARDS
+   ========================================== */
+
+.saved-book {
+    position: relative;
+    margin: 14px 0;
+    padding: 18px;
+    overflow-wrap: anywhere;
+    border: 1px solid rgba(190, 220, 255, 0.24);
+    border-radius: 16px;
+    background: linear-gradient(
+        135deg,
+        rgba(220, 237, 255, 0.15),
+        rgba(220, 237, 255, 0.06)
+    );
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+.saved-book strong {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-light);
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.saved-book p {
+    margin: 6px 0;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.saved-book-label {
+    display: block;
+    margin: 14px 0 6px;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.saved-book select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b5cde5;
+    border-radius: 10px;
+    background: #edf5fc;
+    color: var(--navy);
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* ==========================================
+   MY READING JOURNEY
+   ========================================== */
+
+.reading-journey-card {
+    display: none;
+    width: 90%;
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 35px 25px;
+    text-align: center;
+}
+
+.reading-journey-card h2 {
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.reading-journey-card > p {
+    margin-bottom: 28px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Finished books counter */
+
+.journey-stats {
+    max-width: 250px;
+    margin: 25px auto;
+    padding: 22px;
+    border: 1px solid rgba(220, 237, 255, 0.18);
+    border-radius: 18px;
+    background: rgba(220, 237, 255, 0.09);
+}
+
+.journey-stats h3 {
+    margin: 0 0 10px;
+    color: var(--text-light);
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.journey-stats #journeyFinishedCount {
+    margin: 0;
+    color: #c3e1ff;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* Reading milestones */
+
+.journey-milestones {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.journey-milestones > h3 {
+    margin-bottom: 20px;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.milestone {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0;
+    padding: 15px;
+    border: 1px solid rgba(220, 237, 255, 0.12);
+    border-radius: 14px;
+    background: rgba(235, 243, 255, 0.08);
+}
+
+.milestone > span:first-child {
+    font-size: 25px;
+}
+
+.milestone p {
+    flex: 1;
+    margin: 0;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.milestone-status {
+    color: var(--text-muted);
+    font-size: 12px;
+    text-align: right;
+}
+
+.reading-journey-card button {
+    margin-top: 25px;
+    padding: 12px 20px;
+    border: 1px solid #b8d5f5;
+    border-radius: 25px;
+    background: var(--pale-blue);
+    color: var(--navy);
+    font-size: 14px;
+}
+
+.reading-journey-card button:hover {
+    background: #ffffff;
+}
+
+/* ==========================================
+   RESPONSIVE LAYOUT
+   ========================================== */
+
+@media (max-width: 600px) {
+    body {
+        padding: 25px 12px;
+    }
+
+    .welcome-card,
+    .journal-card,
+    .entries-card,
+    .closing-card,
+    .reading-corner-card,
+    .reading-journey-card {
+        width: 95%;
+        margin: 25px auto;
+        padding: 28px 18px;
+        border-radius: 22px;
+    }
+
+    .welcome-card h1 {
+        font-size: 36px;
+    }
+
+    .welcome-card > button {
+        width: 105px;
+        height: 105px;
+        margin: 7px;
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    .journal-card h2,
+    .reading-corner-card h2,
+    .reading-journey-card h2 {
+        font-size: 25px;
+    }
+
+    .journal-card textarea {
+        min-height: 110px;
+    }
+
+    .entries-row {
+        gap: 8px;
+    }
+
+    .welcome-card .entries-row button {
+        padding: 10px 13px;
+        font-size: 13px;
+    }
+
+    .welcome-card .entries-row .download-button {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        font-size: 22px;
+    }
+
+    .add-book-form {
+        padding: 18px 14px;
+    }
+
+    .milestone {
+        gap: 8px;
+        padding: 12px 9px;
+    }
+
+    .milestone-status {
+        max-width: 75px;
+    }
+
+    /* Stack bookshelf above collections on narrow screens */
+    .reading-library-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .reading-library-layout .bookshelf-illustration {
+        max-width: 280px;
+    }
+
+    .reading-library-layout .book-collections {
+        gap: 10px;
+    }
+
+    .reading-library-layout .book-collection {
+        padding: 12px 10px;
+    }
 }
